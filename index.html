@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<!-- Stellar by HTML5 UP, customized for Knee Brace Project v4 -->
+<html>
+<head>
+    <title>Knee Brace Project – Version 4</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Page background – warm cream color (kept) */
+        body {
+            background: #f5efe6;
+            position: relative;
+        }
+
+        /* Title background removed – now uses wrapper background */
+        #header {
+            padding: 3em 0 2em 0;
+            border-radius: 24px 24px 0 0;
+        }
+        
+        #header h1, #header p {
+            color: #0a3b5b !important; /* back to original dark blue */
+        }
+        
+        #header h1:after {
+            color: #5f7d9c !important; /* original badge color */
+        }
+        
+        #header .logo img {
+            filter: drop-shadow(0 2px 4px rgba(0,60,120,0.1)); /* original logo style */
+        }
+
+        /* Extra organic texture – subtle grain (kept) */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(230,210,180,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 70%, rgba(200,180,150,0.1) 0%, transparent 50%),
+                repeating-linear-gradient(45deg, rgba(160,140,120,0.02) 0px, rgba(160,140,120,0.02) 6px, transparent 6px, transparent 18px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Research paper feel – subtle shadow and clean lines */
+        #wrapper {
+            background-color: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 0 30px rgba(30, 30, 20, 0.15);
+            backdrop-filter: blur(3px);
+            position: relative;
+            z-index: 1;
+            margin: 2rem auto;
+            border-radius: 24px;
+            max-width: 95%;
+        }
+        
+        /* Clinical blue accent for headers inside main content */
+        .major h2 {
+            color: #0a3b5b;
+        }
+        
+        .major h2:after {
+            background: linear-gradient(90deg, #2a7faa, #4f9ac7) !important;
+        }
+        
+        /* Medical card style for features */
+        .features section {
+            background: white;
+            border-radius: 12px;
+            padding: 2em 1.5em;
+            box-shadow: 0 5px 20px rgba(0,60,120,0.05);
+            border: 1px solid rgba(0,80,150,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .features section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,80,150,0.1);
+            border-color: rgba(0,120,200,0.2);
+        }
+        
+        /* Medical icon colors */
+        .features section .icon.major {
+            color: #2a7faa !important;
+            background: rgba(42,127,170,0.08) !important;
+            box-shadow: 0 0 0 1px #2a7faa !important;
+        }
+        
+        /* Table styling – clean research journal look */
+        .table-wrapper table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,40,80,0.05);
+            border: 1px solid #eef2f6;
+        }
+        
+        .table-wrapper th {
+            background: linear-gradient(90deg, #f0f7fc, #e6f0ff);
+            color: #0a3b5b;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+        
+        .table-wrapper td {
+            border-bottom: 1px solid #eef2f6;
+        }
+        
+        /* Research paper blockquotes */
+        blockquote {
+            background: linear-gradient(135deg, #f5faff, #ffffff);
+            border-left: 4px solid #2a7faa;
+            padding: 1.5em;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+            color: #1a405a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        
+        /* Button styling – clinical, precise */
+        .button {
+            background: white;
+            border: 2px solid #2a7faa !important;
+            color: #2a7faa !important;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,80,150,0.1);
+        }
+        
+        .button:hover {
+            background: linear-gradient(135deg, #2a7faa, #4f9ac7) !important;
+            color: white !important;
+            border-color: #2a7faa !important;
+            box-shadow: 0 8px 15px rgba(42,127,170,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .button.primary {
+            background: linear-gradient(135deg, #2a7faa, #4f9ac7) !important;
+            color: white !important;
+        }
+        
+        /* Footer – ultra dark for maximum contrast */
+        #footer {
+            background: #1a2c3a;
+            color: #ffffff;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-radius: 0 0 24px 24px;
+        }
+        
+        #footer h2, #footer p, #footer a, #footer .copyright {
+            color: #ffffff !important;
+        }
+        
+        #footer a:hover {
+            color: #aaccff !important;
+        }
+        
+        /* Navigation – clean and professional */
+        #nav {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(42,127,170,0.15);
+        }
+        
+        #nav ul li a {
+            color: #2a4b6e;
+            font-weight: 500;
+        }
+        
+        #nav ul li a.active {
+            border-bottom-color: #2a7faa;
+            color: #2a7faa;
+        }
+        
+        /* Spotlight image frames – like medical imaging displays */
+        .spotlight .image img {
+            border-radius: 12px;
+            border: 3px solid white;
+            box-shadow: 0 10px 25px rgba(0,50,90,0.15);
+        }
+        
+        /* Graph images – subtle frames */
+        .image.fit img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,40,80,0.1);
+            border: 1px solid white;
+            background: white;
+            padding: 8px;
+        }
+        
+        /* Add "Research Portfolio" badge to header */
+        #header h1:after {
+            content: "Research Portfolio v4.0";
+            display: block;
+            font-size: 0.45em;
+            font-weight: 400;
+            color: #5f7d9c;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        
+        /* Clean up any remaining template colors */
+        .alt, .main, .inner {
+            background: transparent !important;
+        }
+        
+        /* Responsive touch */
+        @media screen and (max-width: 736px) {
+            .features section {
+                padding: 1.5em 1em;
+            }
+            #wrapper {
+                margin: 1rem auto;
+            }
+            #header {
+                padding: 2em 0 1em 0;
+            }
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header" class="alt">
+            <span class="logo"><img src="images/logo.png" alt="Logo" /></span>
+            <h1>Multi-Tissue Injury Prevention System</h1>
+            <p>Version 4: ACL, Meniscus, Patellar Strap, Bone Stress & Muscle Fatigue Detection<br />built by Yuchen Guo</p>
+        </header>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="#intro" class="active">Introduction</a></li>
+                <li><a href="#specs">Technical Specs</a></li>
+                <li><a href="#data">Data & Testing</a></li>
+                <li><a href="#future">Future</a></li>
+            </ul>
+        </nav>
+
+        <div id="main">
+            <section id="intro" class="main">
+                <div class="spotlight">
+                    <div class="content">
+                        <header class="major"><h2>The Problem That Started It All</h2></header>
+                        <p>The day of region finals, I tore every ligament in my knee. My quadriceps fired but my knee didn't respond. The signal was gone. I became obsessed: <strong>Why didn't my body warn me?</strong></p>
+                        <p>Most injury prevention devices detect only muscle fatigue. They miss ACL, meniscus, patellar strap, and bone stress risks. This system uses eight sensors to monitor multiple tissues simultaneously.</p>
+                        <ul class="actions"><li><a href="#specs" class="button">See How It Works</a></li></ul>
+                    </div>
+                    <span class="image"><img src="images/knee 5.jpg" alt="Knee brace prototype" /></span>
+                </div>
+            </section>
+
+            <section id="specs" class="main special">
+                <header class="major"><h2>Technical Specifications</h2></header>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>Component</th><th>Specification</th></tr></thead>
+                        <tbody>
+                            <tr><td>EMG Sensors</td><td>MyoWare 2.0 (x2), 20-450Hz filtering</td></tr>
+                            <tr><td>IMU</td><td>MPU6050 (x2), 6-axis, 100Hz sampling</td></tr>
+                            <tr><td>Force Sensors</td><td>FSR 402 (x4), 10-1000g range</td></tr>
+                            <tr><td>Microcontroller</td><td>Arduino Nano 33 BLE</td></tr>
+                            <tr><td>Risks Detected</td><td>ACL, meniscus, MCL, bone stress, muscle fatigue</td></tr>
+                            <tr><td>Latency</td><td>&lt;50ms (version 4)</td></tr>
+                            <tr><td>Battery Life</td><td>8+ hours (1200mAh LiPo)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="features">
+                    <section><span class="icon solid major style1 fa-heartbeat"></span><h3>ACL Risk & Patellar Strap</h3><p>High force + near extension + valgus angle. Calculated from dual IMUs and force sensors.</p></section>
+                    <section><span class="icon solid major style3 fa-bolt"></span><h3>Meniscus Risk</h3><p>Twisting under load + impact force. Detected via gyroscope and force sensors.</p></section>
+                    <section><span class="icon solid major style5 fa-bone"></span><h3>Bone Stress</h3><p>Cumulative impact force from repeated jumps/landings. Prevents stress fractures.</p></section>
+                    <section><span class="icon solid major style2 fa-dumbbell"></span><h3>Muscle Fatigue</h3><p>EMG amplitude drop over time. Detects when muscles can no longer stabilize the joint.</p></section>
+                </div>
+            </section>
+
+            <section id="data" class="main special">
+                <header class="major">
+                    <h2>Real Testing, Real Results</h2>
+                    <p>5 athletes from 5 sports, 10+ sessions each, collecting data on ACL, meniscus, patellar strap, bone stress, and muscle fatigue. Over 10 sets per tissue type.</p>
+                </header>
+                <div class="box alt">
+                    <div class="row gtr-uniform">
+                        <div class="col-6"><span class="image fit"><img src="images/emg_raw_vs_filtered_healthy.png" alt="EMG healthy" /><figcaption>Raw vs filtered EMG (healthy athlete)</figcaption></span></div>
+                        <div class="col-6"><span class="image fit"><img src="images/emg_raw_vs_filtered_injured.png" alt="EMG injured" /><figcaption>Raw vs filtered EMG (post‑injury)</figcaption></span></div>
+                        <div class="col-6"><span class="image fit"><img src="images/fatigue_index_zones_healthy.png" alt="Fatigue healthy" /><figcaption>Fatigue index with zones – healthy</figcaption></span></div>
+                        <div class="col-6"><span class="image fit"><img src="images/fatigue_index_zones_injured.png" alt="Fatigue injured" /><figcaption>Fatigue index with zones – injured</figcaption></span></div>
+                        <div class="col-6"><span class="image fit"><img src="images/multi_risk_landing_healthy.png" alt="Multi‑risk healthy" /><figcaption>Multi‑tissue risk during landing – healthy</figcaption></span></div>
+                        <div class="col-6"><span class="image fit"><img src="images/multi_risk_landing_injured.png" alt="Multi‑risk injured" /><figcaption>Multi‑tissue risk during landing – injured</figcaption></span></div>
+                        <div class="col-6"><span class="image fit"><img src="images/latency_reduction_chart.png" alt="Latency chart" /><figcaption>Latency reduction: 200ms → 50ms</figcaption></span></div>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <h3>Athlete Testing Results (sample)</h3>
+                    <table>
+                        <thead><tr><th>Athlete</th><th>Sport</th><th>Sessions</th><th>ACL</th><th>Meniscus</th><th>Patellar Strap</th><th>Bone</th><th>Fatigue</th></tr></thead>
+                        <tbody>
+                            <tr><td>A</td><td>Soccer</td><td>8</td><td>3</td><td>2</td><td>2</td><td>4</td><td>7</td></tr>
+                            <tr><td>B</td><td>Running</td><td>12</td><td>2</td><td>1</td><td>1</td><td>8</td><td>10</td></tr>
+                            <tr><td>C</td><td>Basketball</td><td>6</td><td>4</td><td>3</td><td>3</td><td>2</td><td>6</td></tr>
+                            <tr><td>D</td><td>Crossfit</td><td>10</td><td>5</td><td>4</td><td>4</td><td>7</td><td>9</td></tr>
+                            <tr><td>E</td><td>Volleyball</td><td>5</td><td>1</td><td>1</td><td>1</td><td>3</td><td>5</td></tr>
+                            <tr><td><strong>Total</strong></td><td></td><td><strong>41</strong></td><td><strong>15</strong></td><td><strong>11</strong></td><td><strong>11</strong></td><td><strong>24</strong></td><td><strong>37</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <blockquote>"I felt the buzz before my knee felt tired—this would have prevented my last injury." – Athlete B</blockquote>
+                <blockquote>"The different vibration patterns told me exactly what was at risk." – Athlete D</blockquote>
+            </section>
+
+            <section id="future" class="main special">
+                <header class="major"><h2>Version 5 & What to expect next</h2></header>
+                <div class="spotlight">
+                    <div class="content">
+                        <header class="major"><h3>Version 5</h3></header>
+                        <ul>
+                            <li><strong>Custom PCB</strong> – Miniaturize all sensors onto single board</li>
+                            <li><strong>Wireless data logging</strong> – Bluetooth to smartphone app</li>
+                            <li><strong>Machine learning</strong> – Train on injury data for personalized thresholds</li>
+                            <li><strong>Cost target</strong> – Under $100 for complete system</li>
+                        </ul>
+                        <header class="major"><h3>What's next</h3></header>
+                        <p>Version 5 requires resources my current institution cannot provide: biomechatronics labs for miniaturization and custom PCB fabrication.</p>
+                        <p><em>I'm not looking for a fresh start. I'm looking for the tools to finish what I started.</em></p>
+                    </div>
+                    <span class="image"><img src="images/anatomical_overlay.png" alt="Anatomical overlay" /></span>
+                </div>
+            </section>
+        </div>
+
+        <footer id="footer">
+            <section>
+                <h2>About Me</h2>
+                <p>I'm an aspiring neuro‑engineer and electrical‑computer engineer, builder of four knee brace prototypes, founder of a nonprofit, and someone who has lived in seven countries working with scientists and engineers. I turn questions into hardware and solve problems.</p>
+            </section>
+            <section>
+                <h2>Contact</h2>
+                <dl class="alt">
+                    <dt>Email</dt><dd><a href="mailto:athleticmoitors@gmail.com">athleticmoitors@gmail.com</a></dd>
+                </dl>
+            </section>
+            <p class="copyright">&copy; 2025 Yuchen Guo.</p>
+        </footer>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+                && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').animate({ scrollTop: target.offset().top - 70 }, 800, function(){
+                        window.location.hash = target.selector;
+                    });
+                }
+            }
+        });
+    });
+    </script>
+</body>
+</html>
